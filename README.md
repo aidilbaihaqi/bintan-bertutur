@@ -15,4 +15,12 @@ Website ini dapat digunakan oleh pelaku usaha pariwisata, pemerintah daerah, mau
     </tr>
 </table>
 
+<h3 align="left">Dikembangkan Oleh: </h3>
+<ul>
+  <li>Aidil Baihaqi - 2301020006 (Project Manager)</li>
+  <li>Farrel Razan Aryaputra - 2301020096 (Front-End Developer)</li>
+  <li>Adelia Kristina Purba - 2301020? (Front-End Developer)</li>
+  <li>Alfian Seftina Sari - 2301020? (Front-End Developer)</li>
+</ul>
+
 <h3 align="left">Fitur: </h3>
