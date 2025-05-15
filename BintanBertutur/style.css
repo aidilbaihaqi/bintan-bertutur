@@ -140,13 +140,26 @@ img {
 @media screen and (max-width: 1023px) {
     .nav__menu{
         position: fixed;
-        top: 0;
+        top: -100%;
         left: 0;
-        background-color: gray;
+        background-color: hsla(0, 0%, 0%, .3);
         width: 100%;
         padding-block: 4rem;
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
-        transition: topo .4s;
+        transition: top .4s;
     }
+}
+
+.nav__list{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+
+.nav__close{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
 }
