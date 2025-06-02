@@ -131,8 +131,14 @@ img {
 
 .nav__logo {
   color: var(--title-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
   font-family: var(--second-font);
   font-weight: var(--font-semi-bold);
+}
+
+.nav__logo:hover {
+  color:rgb(230, 230, 230);
 }
 
 .nav__toggle,
@@ -808,7 +814,7 @@ img {
     font-size: var(--h2-font-size);
   }
   .popular__location {
-    font-size: var(--h2-font-size);
+    font-size: var(--h4-font-size);
   }
 
   .explore__img {
