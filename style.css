@@ -834,6 +834,14 @@ img {
     margin-bottom: 1.25rem;
   }
 
+  .whatsapp {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .whatsapp:hover {
+    color:rgb(114, 255, 124);
+  }
+
   .join__container {
     grid-template-columns: 460px 340px;
     column-gap: 8.5rem;
