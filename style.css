@@ -104,6 +104,7 @@ img {
 .section__title {
   text-align: center;
   font-size: var(--h1-font-size);
+  margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 
@@ -465,7 +466,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  column-gap: 0.5rem;
+  column-gap: 0.4rem;
 }
 
 .explore__perfil {
@@ -814,7 +815,7 @@ img {
     height: 600px;
   }
   .explore__content {
-    padding-top: 28re m;
+    padding-top: 28rem;
     grid-template-columns: 670px 1fr;
   }
   .explore__data,
