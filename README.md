@@ -22,5 +22,3 @@ Website ini dapat digunakan oleh pelaku usaha pariwisata, pemerintah daerah, mau
   <li>Adelia Kristina Purba - 2301020? (Front-End Developer)</li>
   <li>Alfian Seftina Sari - 2301020? (Front-End Developer)</li>
 </ul>
-
-<h3 align="left">Fitur: </h3>
