@@ -24,6 +24,30 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.remove("show-menu");
     })
   );
+
+  const testimonials = document.querySelectorAll(".testimonial__card");
+  const events = document.querySelectorAll(".event__card");
+
+    const fadeOutOnScroll = () => {
+        testimonials.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                card.classList.remove("fade-out"); // Reset the fade-out effect when in view
+            } else {
+                card.classList.add("fade-out"); // Apply fade-out effect when out of view
+            }
+        });
+        events.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                card.classList.remove("fade-out"); // Reset the fade-out effect when in view
+            } else {
+                card.classList.add("fade-out"); // Apply fade-out effect when out of view
+            }
+        });
+    };
+
+    window.addEventListener("scroll", fadeOutOnScroll);
 });
 
 /* Blur header on scroll */

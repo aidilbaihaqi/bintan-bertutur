@@ -874,3 +874,194 @@ img {
     right: 3rem;
   }
 }
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #000;  /* Black background */
+    padding: 2rem 0;
+    color: #fff; /* White text */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.testimonials__container {
+    display: grid;
+    gap: 1.5rem;
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr); /* Default for mobile */
+}
+
+.testimonial__card {
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency for the cards */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Fade in animation */
+}
+
+/* Animating fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .testimonials__container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}
+
+.testimonial__quote {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial__author {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ccc;
+}
+
+/* Fade out effect (triggered when user scrolls past section or dynamically with JS) */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.testimonial__card.fade-out {
+    animation: fadeOut 2s ease-out forwards; /* Apply fade-out on leaving view */
+}
+
+/* Events Section */
+.events {
+    background-color: #111;  /* Dark background */
+    padding: 2rem 0;
+    color: #fff; /* White text */
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+.events__container {
+    display: grid;
+    gap: 1.5rem;
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr); /* Default for mobile */
+}
+
+.event__card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency for the cards */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.event__card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Animating fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .events__container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}
+
+.event__image {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    border-radius: 10px;
+}
+
+.event__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.event__card:hover .event__img {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+.event__content {
+    padding: 1.5rem 0;
+}
+
+.event__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FCD406; /* Bright yellow for the title */
+    margin-bottom: 0.5rem;
+}
+
+.event__date {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+.event__description {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.button {
+    background-color: #FCD406;  /* Yellow button */
+    padding: 1rem;
+    color: #111;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1254C2;  /* Dark blue on hover */
+    color: #fff;
+}
+
+.button i {
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 1023px) {
+    .events__container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for larger tablets */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .events__container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+    }
+}
