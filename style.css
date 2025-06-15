@@ -878,26 +878,74 @@ img {
 /* Testimonials Section */
 .testimonials {
     background-color: #000;  /* Black background */
-    padding: 2rem 0;
+    padding: 3rem 0;
     color: #fff; /* White text */
     animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+.testimonials__carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
 }
 
 .testimonials__container {
-    display: grid;
-    gap: 1.5rem;
-    justify-content: center;
-    grid-template-columns: repeat(1, 1fr); /* Default for mobile */
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease-in-out;
 }
 
 .testimonial__card {
     background: rgba(255, 255, 255, 0.1); /* Slight transparency for the cards */
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 300px; /* Fixed width for each card */
     text-align: center;
-    opacity: 0;
-    animation: fadeIn 2s ease-out forwards; /* Fade in animation */
+    flex-shrink: 0; /* Prevent shrinking of the testimonial cards */
+}
+
+.testimonial__quote {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial__author {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ccc;
+}
+
+/* Carousel Navigation Arrows */
+.carousel__prev,
+.carousel__next {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.carousel__prev {
+    left: 10px;
+}
+
+.carousel__next {
+    right: 10px;
+}
+
+.carousel__prev:hover,
+.carousel__next:hover {
+    color: #FCD406; /* Yellow on hover */
 }
 
 /* Animating fade-in */
@@ -913,34 +961,16 @@ img {
 /* Responsiveness */
 @media screen and (max-width: 768px) {
     .testimonials__container {
-        grid-template-columns: 1fr; /* Single column for smaller screens */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial__card {
+        width: 100%;
+        max-width: 300px; /* Limit max width on mobile */
     }
 }
 
-.testimonial__quote {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.testimonial__author {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ccc;
-}
-
-/* Fade out effect (triggered when user scrolls past section or dynamically with JS) */
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-.testimonial__card.fade-out {
-    animation: fadeOut 2s ease-out forwards; /* Apply fade-out on leaving view */
-}
 
 /* Events Section */
 .events {

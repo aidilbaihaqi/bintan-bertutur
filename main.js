@@ -25,12 +25,44 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   );
 
-  const testimonials = document.querySelectorAll(".testimonial__card");
+  const prevButton = document.getElementById("prevTestimonial");
+    const nextButton = document.getElementById("nextTestimonial");
+    const testimonialContainer = document.querySelector(".testimonials__container");
+
+    let currentIndex = 0; // Track current testimonial
+
+    const testimonials = document.querySelectorAll(".testimonial__card");
+    const totalTestimonials = testimonials.length;
+
+    // Function to show the current testimonial
+    const showTestimonial = (index) => {
+        // Use modulo operator to loop back to the first or last testimonial
+        currentIndex = (index + totalTestimonials) % totalTestimonials;
+
+        // Move the container to the right testimonial
+        testimonialContainer.style.transform = `translateX(-${currentIndex * 10}%)`;
+    };
+
+    // Event listeners for the buttons
+    prevButton.addEventListener("click", () => {
+        currentIndex--;
+        showTestimonial(currentIndex);
+    });
+
+    nextButton.addEventListener("click", () => {
+        currentIndex++;
+        showTestimonial(currentIndex);
+    });
+
+    // Initially display the first testimonial
+    showTestimonial(currentIndex);
+
+  const testimonialsCard = document.querySelectorAll(".testimonial__card");
   const events = document.querySelectorAll(".event__card");
   const questions = document.querySelectorAll(".faq__question");
 
   const fadeOutOnScroll = () => {
-    testimonials.forEach((card) => {
+    testimonialsCard.forEach((card) => {
       const rect = card.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom >= 0) {
         card.classList.remove("fade-out"); // Reset the fade-out effect when in view
@@ -49,10 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   questions.forEach((question) => {
-      question.addEventListener("click", () => {
-        question.classList.toggle("active");
-      });
+    question.addEventListener("click", () => {
+      question.classList.toggle("active");
     });
+  });
 
   window.addEventListener("scroll", fadeOutOnScroll);
 });
