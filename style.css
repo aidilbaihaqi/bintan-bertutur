@@ -944,7 +944,7 @@ img {
 
 /* Events Section */
 .events {
-    background-color: #111;  /* Dark background */
+    background-color: #000;  /* Dark background */
     padding: 2rem 0;
     color: #fff; /* White text */
     animation: fadeIn 1s ease-in-out;
@@ -1075,4 +1075,89 @@ img {
 .button i {
     margin-left: 0.5rem;
     font-size: 1.25rem;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #000;  /* Dark background */
+    color: #fff; /* White text */
+    padding: 2rem 0;
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+.faq__container {
+    display: grid;
+    gap: 1.5rem;
+    justify-content: center;
+    grid-template-columns: 1fr;
+}
+
+.faq__item {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparency for the cards */
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.faq__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.faq__icon {
+    font-size: 1.5rem;
+    color: #FCD406;  /* Bright yellow icon */
+}
+
+.faq__answer {
+    display: none;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.faq__question.active + .faq__answer {
+    display: block; /* Show answer when question is clicked */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .faq__container {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+
+    .faq__item {
+        padding: 1rem;
+    }
+
+    .faq__question {
+        font-size: 1.125rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .faq__container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets and small desktop */
+    }
+
+    .faq__item {
+        padding: 1.5rem;
+    }
+
+    .faq__question {
+        font-size: 1.25rem;
+    }
 }

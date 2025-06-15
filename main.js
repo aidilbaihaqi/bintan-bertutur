@@ -27,27 +27,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const testimonials = document.querySelectorAll(".testimonial__card");
   const events = document.querySelectorAll(".event__card");
+  const questions = document.querySelectorAll(".faq__question");
 
-    const fadeOutOnScroll = () => {
-        testimonials.forEach((card) => {
-            const rect = card.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                card.classList.remove("fade-out"); // Reset the fade-out effect when in view
-            } else {
-                card.classList.add("fade-out"); // Apply fade-out effect when out of view
-            }
-        });
-        events.forEach((card) => {
-            const rect = card.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom >= 0) {
-                card.classList.remove("fade-out"); // Reset the fade-out effect when in view
-            } else {
-                card.classList.add("fade-out"); // Apply fade-out effect when out of view
-            }
-        });
-    };
+  const fadeOutOnScroll = () => {
+    testimonials.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        card.classList.remove("fade-out"); // Reset the fade-out effect when in view
+      } else {
+        card.classList.add("fade-out"); // Apply fade-out effect when out of view
+      }
+    });
+    events.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        card.classList.remove("fade-out"); // Reset the fade-out effect when in view
+      } else {
+        card.classList.add("fade-out"); // Apply fade-out effect when out of view
+      }
+    });
+  };
 
-    window.addEventListener("scroll", fadeOutOnScroll);
+  questions.forEach((question) => {
+      question.addEventListener("click", () => {
+        question.classList.toggle("active");
+      });
+    });
+
+  window.addEventListener("scroll", fadeOutOnScroll);
 });
 
 /* Blur header on scroll */
