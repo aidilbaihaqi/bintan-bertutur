@@ -953,9 +953,9 @@ img {
 
 .events__container {
     display: grid;
-    gap: 1.5rem;
+    gap: 2rem; /* Increased gap for better spacing */
     justify-content: center;
-    grid-template-columns: repeat(1, 1fr); /* Default for mobile */
+    grid-template-columns: repeat(1, 1fr); /* Default for mobile (1 column) */
 }
 
 .event__card {
@@ -966,6 +966,8 @@ img {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    max-width: 350px; /* Limit card width */
+    margin: 0 auto; /* Center card */
 }
 
 .event__card:hover {
@@ -984,9 +986,30 @@ img {
 }
 
 /* Responsiveness */
+@media screen and (max-width: 1024px) {
+    .events__container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
 @media screen and (max-width: 768px) {
     .events__container {
         grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 1.5rem; /* Reduce gap for smaller screens */
+    }
+
+    .event__card {
+        padding: 1.5rem; /* Reduced padding on smaller screens */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .events__container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for large desktop screens */
+    }
+
+    .event__card {
+        padding: 2.5rem; /* Increased padding on large screens */
     }
 }
 
@@ -1052,16 +1075,4 @@ img {
 .button i {
     margin-left: 0.5rem;
     font-size: 1.25rem;
-}
-
-@media screen and (max-width: 1023px) {
-    .events__container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for larger tablets */
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .events__container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
-    }
 }
